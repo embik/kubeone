@@ -92,6 +92,16 @@ const (
 	AzureFileCSISnapshotter
 	AzureFileCSISnapshotterController
 
+	// DigitalOcean CSI
+	DigitalOceanCSI
+	DigitalOceanCSIAutomount
+	DigitalOceanCSIAttacher
+	DigitalOceanCSINodeDriverRegistrar
+	DigitalOceanCSIProvisioner
+	DigitalOceanCSIResizer
+	DigitalOceanCSISnapshotter
+	DigitalOceanCSISnapshotController
+
 	// CCMs and CSI plugins
 	DigitaloceanCCM
 	HetznerCCM
@@ -165,6 +175,16 @@ func optionalResources() map[Resource]map[string]string {
 
 		// DigitalOcean CCM
 		DigitaloceanCCM: {"*": "docker.io/digitalocean/digitalocean-cloud-controller-manager:v0.1.33"},
+
+		// DigitalOcean CSI driver
+		DigitalOceanCSI:                    {"*": "docker.io/digitalocean/do-csi-plugin:v2.1.2"},
+		DigitalOceanCSIAutomount:           {"*": "docker.io/library/alpine:3"},
+		DigitalOceanCSIAttacher:            {"*": "quay.io/k8scsi/csi-attacher:v3.0.2"},
+		DigitalOceanCSINodeDriverRegistrar: {"*": "quay.io/k8scsi/csi-node-driver-registrar:v2.0.1"},
+		DigitalOceanCSIProvisioner:         {"*": "quay.io/k8scsi/csi-provisioner:v2.0.4"},
+		DigitalOceanCSIResizer:             {"*": "quay.io/k8scsi/csi-resizer:v1.0.1"},
+		DigitalOceanCSISnapshotter:         {"*": "quay.io/k8scsi/csi-snapshotter:v3.0.2"},
+		DigitalOceanCSISnapshotController:  {"*": "quay.io/k8scsi/snapshot-controller:v3.0.2"},
 
 		// Hetzner CCM
 		HetznerCCM: {"*": "docker.io/hetznercloud/hcloud-cloud-controller-manager:v1.9.1"},

@@ -52,6 +52,8 @@ func Ensure(s *state.State) error {
 			return nil
 		}
 		err = addons.EnsureAddonByName(s, resources.AddonCSIVsphere)
+	case s.Cluster.CloudProvider.DigitalOcean != nil:
+		err = addons.EnsureAddonByName(s, resources.AddonCSIDigitalOcean)
 	default:
 		s.Logger.Infof("CSI driver for %q not yet supported, skipping", s.Cluster.CloudProvider.CloudProviderName())
 		return nil

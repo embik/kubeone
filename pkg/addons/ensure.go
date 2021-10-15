@@ -51,6 +51,7 @@ var (
 		resources.AddonCSIHetnzer:         "",
 		resources.AddonCSIOpenStackCinder: "",
 		resources.AddonCSIVsphere:         "",
+		resources.AddonCSIDigitalOcean:    "",
 		resources.AddonMachineController:  "",
 		resources.AddonMetricsServer:      "",
 		resources.AddonNodeLocalDNS:       "",
